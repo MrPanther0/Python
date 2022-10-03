@@ -1,0 +1,288 @@
+Practical 1 -
+
+# Create a program that asks the user to enter their name and their age. Print out a message addressed to them that tells them the year tha
+
+name = input("Enter your name: ")
+age = int(input("Enter your age: "))
+year = 2022 + (100-age)
+print(name, "you will turn 100 in", year, "years")
+
+
+# Enter the number from the user and depending on whether the number is even or odd, print out an appropriate message to the user.
+
+num = int(input("Enter any integer number: "))
+mod = num%2
+if mod > 0:
+  print("Your number is odd")
+else:
+  print("Your number is even")
+
+
+# Write a program to generate the Fibonacci series.
+def fib(n):
+  a = 0
+  b = 1
+  print(a)
+  print(b)
+  for i in range(2, n):
+    c = a+b
+    a = b
+    b = c
+  print(c)
+n = int(input("How many terms you wants: "))
+fib(n)
+
+
+# Write a program that reverses the user defined value and check whether that number is palindrome or not
+
+n = int(input("Enter any number: "))
+temp = n
+rev = 0
+while(n>0):
+  dig = n%10
+  rev = rev*10+dig
+  n = n//10
+if(temp==rev):
+  print("The number is palindrome")
+else:
+  print("The number is not palindrome")
+
+
+# Write a program to check the input value is Armstrong.
+
+
+# Write a program to print the factorial for a given number.
+
+a = int(input("Enter any number: "))
+fact = 1
+for x in range(1, a+1):
+  fact = fact*x
+print(fact)
+
+
+Practical 2 -
+
+# Write a function that takes a character (i.e. a string of length 1) and returns True if it is a vowel, False otherwise
+
+def vowel(x):
+  if x in ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]:
+    return "True"
+  else:
+    return "False "
+a = input ("Enter the letter: ")
+print (vowel(a))
+
+
+# Define a function that computes the length of a given list or string.
+
+def collen(n):
+  count = 0
+  for i in n:
+    count += 1
+  return count
+print("The lenght of the list is ", collen[1,2,3,4,5])
+print("The lenght of the string is ", collen("Kamal"))
+
+
+# Define a procedure histogram() that takes a list of integers and prints a histogram to the screen.
+
+def histogram(n):
+  for i in n:
+    print(i*'*')
+n = 1, 4, 9
+histogram(n)
+
+
+Practical 3 -
+
+# A pangram is a sentence that contains all the letters of the English alphabet at least once, for example: The quick brown fox jumps over
+
+import string
+def check(sentence):
+  alphabet = "abcdefghijklmnopqrstuvwxyz"
+  for letter in alphabet:
+    if letter not in sentence:
+      return print(sentence + ": is not a pangram")
+  return print(sentence + ": is a pangram")
+s = input("Enter a sentence: ")
+check(s.lower())
+
+
+# Take a list, say for example this one: a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89] and write a program that prints out all the elements of
+
+a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+for num in a:
+  if num<5:
+    print(num)
+
+
+Practical 4 -
+
+# Write a Python script to sort (ascending and descending) a dictionary by value
+
+from audioop import reverse
+import operator
+dic = {1:'c', 2:'b', 3:"a"}
+print(dic)
+sort = sorted(dic.items(), key=operator.itemgetter(0))
+print(sort)
+sort = sorted(dic.items(), key=operator.itemgetter(0), reverse = True)
+print(sort)
+
+
+# Write a Python script to concatenate following dictionaries to create a new one. Sample Dictionary : dic1={1:10, 2:20} dic2={3:30, 4:40} d
+
+dic1 = {1:10, 2:20}
+dic2 = {3:30, 4:40}
+dic3 = {5:50, 6:60}
+dic1.update(dic2)
+dic1.update(dic3)
+print(dic1)
+
+
+Practical 5 -
+
+# Write a program that takes two lists and returns True if they have at least one common member
+
+l1 = [1,2,3,4,5,6]
+l2 = [9,8,7]
+for x in l1:
+  for y in l2:
+    if x==y:
+      print('True')
+    elif x!=y:
+      print('false')
+# def check(list1, list2):
+# result = False
+# for x in list1:
+# for y in list2:
+# if x==y:
+# return True
+# return result
+# print(check([1,2,3,4,5,6], [9,8,7,6,5,4]))
+
+
+# Write a Python program to print a specified list after removing the 0th, 2nd, 4th and 5th element
+
+list = ['Kamal', 'Nishant', "Om", 'Santosh', 'Amit']
+newlist = []
+for i in list:
+  if list.index(i) == 1 or list.index(i) == 3:
+    newlist.append(i)
+print(newlist)
+# list = ['1', '2', '3', '4', '5']
+# Newlist = []
+# for i in list:
+# if list.index(i) == 1 or list.index(i) == 3:
+# Newlist.append(i)
+# print(Newlist)
+
+
+# Write a python program to clone or copy a list
+
+L1=['1', '2']
+L2=list(L1)
+print("Ll: ",L1)
+print("L2: ",L2)
+# def Copy(list1):
+#   list_copy = list1[:]
+#   return list_copy
+# list1 = [4, 8, 2, 10, 15, 18]
+# list2 = Copy(list1)
+# print("Original List:", list1)
+# print("After Cloning:", list2)
+
+
+Practical 6 -
+
+# Write a Python program to read an entire text file
+
+f = open("1.txt","r")
+t = f.read()
+print(t)
+f.close()
+
+
+# Write a Python program to append text to a file and display the text
+
+f = open("1.txt", "a+")
+f.write("Anything")
+f = open("1.txt", "r")
+t = f.read()
+print(t)
+f.close()
+
+
+# Write a Python program to write text to a file and display the text
+
+f = open("1.txt", "w")
+f.write("Kamal Jaiswar")
+print("content copied")
+f.close()
+
+
+# Write a program to accept the name from user and write it in file
+
+f = open("1.txt", "w")
+x = input("Enter your name: ")
+f.write(x)
+print("content copied")
+f.close()
+
+
+# Write a program to accept employee name and salary from user and write the content in file
+
+name = input ("Enter your name: ")
+salary = input("Enter your salary: ")
+f = open("1.txt", "w")
+f.write(name+" "+salary)
+print("content copied")
+f.close()
+
+
+Practical 7 -
+
+# Write a python program to create a simple GUI
+
+import tkinter as tk
+w = tk.Tk()
+w.title("1st GUI app")
+w.mainloop()
+
+
+# Write a Python program to create a GUI using pack(), grid() & label()
+
+import tkinter as tk
+from tkinter import *
+w1 = tk.Tk()
+w1.title("My App")
+l1 = tk.Label(w1, text='Pikachu',bg='yellow',height=10,width=19, fg='black')
+l1.pack()
+w1.mainloop()
+
+
+# Write a python program to use a button widget
+
+from tkinter import *
+root = Tk()
+def callback():
+  print("clicked")
+b1 = Button(root, text="Click Here",bg="yellow", command=callback)
+b1.grid(row=0, column=1)
+root .mainloop()
+
+
+# Write a python program for entry widget
+
+from tkinter import *
+w = Tk()
+def put():
+  print (E1.get())
+L1 = Label(w, text="Username")
+L1.grid(row=1, column=1)
+E1 = Entry(w, bd =5)
+E1.grid(row=1,column=2)
+B1 = Button(w, text="Insert", command=put)
+B1.grid (row=3, column=2)
+w.mainloop()
+Practical 8 -
